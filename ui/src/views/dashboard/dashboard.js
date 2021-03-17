@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import ROUTES from '../../routes';
 
@@ -51,15 +51,11 @@ const Dashboard = ({ ...props }) => {
 
     const Activities = () => {
         const Acitivty = ({ name, description, route }) => {
-            const [isHovering, setIsHovering] = useState(false);
-
             return (
                 <div
                     className={
                         'flex flex-col items-center p-4 rounded bg-blue-200 hover:bg-blue-300 m-4 w-1/3 shadow-lg hover:shadow-xl cursor-pointer'
                     }
-                    onMouseOver={() => setIsHovering(true)}
-                    onMouseLeave={() => setIsHovering(false)}
                     onClick={() => history.push(route)}>
                     <h3 className={'text-xl font-semibold'}>{name}</h3>
                     <p className={'text-center'}>{description}</p>

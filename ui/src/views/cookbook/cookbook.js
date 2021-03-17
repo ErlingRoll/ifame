@@ -43,7 +43,11 @@ const Cookbook = () => {
                     className={'relative inline-block mb-8 mr-4 cursor-pointer'}
                     style={{ width: '18vw', height: '22vw' }}
                     onClick={() => history.push(ROUTES.RECIPES)}>
-                    <img src={meieriprodukt} className={'w-full h-full'} />
+                    <img
+                        src={meieriprodukt}
+                        className={'w-full h-full'}
+                        alt={'recipe link'}
+                    />
                     <h3
                         className={
                             'absolute m-8 top-0 left-0 text-white text-lg'
@@ -55,7 +59,11 @@ const Cookbook = () => {
                     className={'relative inline-block align-top cursor-pointer'}
                     style={{ width: '30vw', height: '16vw' }}
                     onClick={() => history.push(ROUTES.RECIPES)}>
-                    <img src={fruktOgGronnsaker} className={'w-full h-full'} />
+                    <img
+                        src={fruktOgGronnsaker}
+                        className={'w-full h-full'}
+                        alt={'recipe link'}
+                    />
                     <div
                         className={
                             'absolute flex w-full h-full top-0 left-0 justify-center items-center'
@@ -68,7 +76,11 @@ const Cookbook = () => {
                         className={'relative block cursor-pointer'}
                         style={{ width: '30vw', height: '16vw' }}
                         onClick={() => history.push(ROUTES.RECIPES)}>
-                        <img src={middagsrester} className={'w-full h-full'} />
+                        <img
+                            src={middagsrester}
+                            className={'w-full h-full'}
+                            alt={'recipe link'}
+                        />
                         <h3 className={'absolute m-8 bottom-0 left-0 text-lg'}>
                             MIDDAGSRESTER
                         </h3>
@@ -79,7 +91,11 @@ const Cookbook = () => {
                         }
                         style={{ width: '18vw', height: '22vw' }}
                         onClick={() => history.push(ROUTES.RECIPES)}>
-                        <img src={kornprodukter} className={'w-full h-full'} />
+                        <img
+                            src={kornprodukter}
+                            className={'w-full h-full'}
+                            alt={'recipe link'}
+                        />
                         <div
                             className={
                                 'absolute flex w-full h-full top-0 left-0 justify-center items-center'

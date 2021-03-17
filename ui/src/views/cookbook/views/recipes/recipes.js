@@ -29,7 +29,11 @@ const Recipes = () => {
                 }
                 style={{ height: `${30 * heightMulti}vw` }}>
                 <div className={'w-full h-full hover:opacity-25 z-10'}>
-                    <img src={src} className={'object-cover h-full w-full'} />
+                    <img
+                        src={src}
+                        className={'object-cover h-full w-full'}
+                        alt={'recipe link'}
+                    />
                 </div>
                 <div
                     className={

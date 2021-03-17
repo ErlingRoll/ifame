@@ -1,5 +1,4 @@
 import React from 'react';
-import ROUTES from '../../routes';
 
 const Navbar = () => {
     const NavItem = ({ name }) => <div>{name}</div>;
