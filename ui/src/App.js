@@ -1,19 +1,53 @@
 import React from 'react';
-import {Route, Router} from 'react-router-dom';
-import {createBrowserHistory} from 'history';
+import { Route, HashRouter as Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { useSelector } from 'react-redux';
+import selectors from './store/selectors';
+
+// Assets
 import ROUTES from './routes';
-import Dashboard from './views/dashboard';
+
+// Components
+import Dashboard from './views/dashboard/dashboard';
+import Navbar from './views/navbar/navbar';
+import Login from './views/login/login';
+import Cookbook from './views/cookbook/cookbook';
+import Recipes from './views/cookbook/views/recipes/recipes';
 
 const history = createBrowserHistory();
 
 function App() {
-  return (
-    <div>
-        <Router history={history}>
-            <Route path={ROUTES.DASHBOARD} component={Dashboard}/>
-        </Router>
-    </div>
-  );
+    let isLoggedIn = useSelector(selectors.user.isLoggedIn);
+    isLoggedIn = true;
+
+    return (
+        <div>
+            <Navbar />
+            <Router history={history}>
+                {isLoggedIn ? (
+                    <React.Fragment>
+                        <Route
+                            exact
+                            path={ROUTES.DASHBOARD}
+                            component={Dashboard}
+                        />
+                        <Route
+                            exact
+                            path={ROUTES.COOKBOOK}
+                            component={Cookbook}
+                        />
+                        <Route
+                            exact
+                            path={ROUTES.RECIPES}
+                            component={Recipes}
+                        />
+                    </React.Fragment>
+                ) : (
+                    <Route exact path={ROUTES.LOGIN} component={Login} />
+                )}
+            </Router>
+        </div>
+    );
 }
 
 export default App;

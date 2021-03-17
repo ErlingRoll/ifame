@@ -1,5 +1,8 @@
 const ROUTES = {
-    DASHBOARD: '/'
-}
+    DASHBOARD: '/',
+    LOGIN: '/login',
+    COOKBOOK: '/cookbook',
+    RECIPES: '/recipes',
+};
 
 export default ROUTES;
