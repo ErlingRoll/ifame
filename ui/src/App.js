@@ -28,7 +28,6 @@ function App() {
             <Router history={history}>
                 {isLoggedIn ? (
                     <React.Fragment>
-                        <Redirect from={'/login'} to={ROUTES.DASHBOARD} />
                         <Route
                             exact
                             path={ROUTES.DASHBOARD}
@@ -54,6 +53,9 @@ function App() {
                             path={ROUTES.COMPETITION}
                             component={Competition}
                         />
+                        <Route exact path={ROUTES.LOGIN}>
+                            <Redirect to={ROUTES.DASHBOARD} />
+                        </Route>
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
