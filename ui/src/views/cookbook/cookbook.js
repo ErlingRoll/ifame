@@ -28,7 +28,7 @@ const Cookbook = () => {
             <div
                 className={'w-2/5 flex flex-col items-center p-12'}
                 style={{ paddingTop: '10%' }}>
-                <Quote sender={'en utgående matvar'}>
+                <Quote sender={'en utgående matvare'}>
                     "Ingen kan kjøpe seg lykke, men jeg blir lykkelig om du
                     kjøper meg"
                 </Quote>

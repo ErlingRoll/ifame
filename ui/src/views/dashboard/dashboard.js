@@ -72,7 +72,7 @@ const Dashboard = ({ ...props }) => {
                         description={
                             'Se hvor mye du har spart ... type matvarer etter kategori ...'
                         }
-                        route={ROUTES.COOKBOOK}
+                        route={ROUTES.STATISTICS}
                     />
                     <Acitivty
                         name={'Kokebok'}
@@ -84,7 +84,7 @@ const Dashboard = ({ ...props }) => {
                     <Acitivty
                         name={'Konkurranse'}
                         description={'Sånn kan du bruke maten du har kjøpt...'}
-                        route={ROUTES.COOKBOOK}
+                        route={ROUTES.COMPETITION}
                     />
                 </div>
             </div>
