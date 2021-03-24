@@ -1,8 +1,9 @@
 import React from 'react';
-import { Route, HashRouter as Router } from 'react-router-dom';
+import { Route, HashRouter as Router, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { useSelector } from 'react-redux';
 import selectors from './store/selectors';
+import './App.module.css';
 
 // Assets
 import ROUTES from './routes';
@@ -20,14 +21,14 @@ const history = createBrowserHistory();
 
 function App() {
     let isLoggedIn = useSelector(selectors.user.isLoggedIn);
-    isLoggedIn = true;
 
     return (
-        <div>
+        <div className={'h-full pt-16'}>
             <Navbar />
             <Router history={history}>
                 {isLoggedIn ? (
                     <React.Fragment>
+                        <Redirect from={'/login'} to={ROUTES.DASHBOARD} />
                         <Route
                             exact
                             path={ROUTES.DASHBOARD}
@@ -55,7 +56,10 @@ function App() {
                         />
                     </React.Fragment>
                 ) : (
-                    <Route exact path={ROUTES.LOGIN} component={Login} />
+                    <React.Fragment>
+                        <Redirect from={'*'} to={ROUTES.LOGIN} />
+                        <Route exact path={ROUTES.LOGIN} component={Login} />
+                    </React.Fragment>
                 )}
             </Router>
         </div>

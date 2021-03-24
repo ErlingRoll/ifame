@@ -1,26 +1,24 @@
 import React from 'react';
 
-// Services
-import firebase from 'firebase';
-import { auth } from '../../services/firebase';
+// Components
+import GoogleLoginButton from '../../components/button/login_button/googleLoginButton';
 
-const Login = ({ ...props }) => {
-    const login = () => {
-        console.log('Logging in!');
-        const googleProvider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(googleProvider)
-            .then((res) => {
-                console.log(res.user);
-            })
-            .catch((error) => {
-                console.log(error.message);
-            });
-    };
-
+const Login = () => {
     return (
-        <div>
-            Dashboard
-            <button onClick={login}>Login</button>
+        <div className={'h-full flex flex-col bg-gray-200'}>
+            <div className={'h-full flex items-center justify-center'}>
+                <div
+                    className={
+                        'border-2 border-gray-400 rounded bg-white flex items-center justify-center'
+                    }
+                    style={{
+                        width: '30vw',
+                        height: '60vh',
+                        minWidth: '300px',
+                    }}>
+                    <GoogleLoginButton />
+                </div>
+            </div>
         </div>
     );
 };

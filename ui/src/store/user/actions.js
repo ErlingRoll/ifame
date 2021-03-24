@@ -1,6 +1,5 @@
 import { MUTATIONS } from './reducer';
 import * as firebase from '../../services/firebase';
-import { Dispatch } from 'react';
 
 export function login(payload) {
     return { type: 'LOGIN', payload };
@@ -11,9 +10,9 @@ const setUser = (user) => ({
     payload: user,
 });
 
-const signOut = () => {
-    firebase.auth.signOut();
-};
+const signOut = () => ({
+    type: MUTATIONS.LOGOUT,
+});
 
 export default {
     setUser,

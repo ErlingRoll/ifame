@@ -1,10 +1,12 @@
+import * as firebase from '../../services/firebase';
 export const MUTATIONS = {
     SET_USER: 'USER_SET_USER',
+    LOGOUT: 'LOGOUT',
 };
 
 const initialState = {
     isLoggedIn: false,
-    user: null,
+    data: null,
 };
 
 const user = (state = initialState, action) => {
@@ -13,8 +15,16 @@ const user = (state = initialState, action) => {
             const user = action.payload;
             return {
                 ...state,
-                user: Boolean(user) ? user : null,
+                data: Boolean(user) ? user : null,
                 isLoggedIn: Boolean(user),
+            };
+        }
+        case MUTATIONS.LOGOUT: {
+            firebase.auth.signOut();
+            return {
+                ...state,
+                data: null,
+                isLoggedIn: false,
             };
         }
         default:
