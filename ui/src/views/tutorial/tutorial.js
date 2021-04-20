@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { FaChevronDown } from 'react-icons/fa';
-
-const tutorialVideo = require('../../assets/videos/tutorial.mp4');
 const scanImage = require('../../assets/images/scan_cropped.png');
 const arrowLoop = require('../../assets/images/arrow_loop.png');
 
@@ -154,7 +152,9 @@ const Tutorial = () => {
                     <div className={'flex items-center'} style={{ height: '80%' }}>
                         <div className={'w-2/3 flex items-center'}>
                             <ReactPlayer
-                                url={tutorialVideo}
+                                url={
+                                    'https://firebasestorage.googleapis.com/v0/b/ifame-2f5e8.appspot.com/o/tutorial.mp4?alt=media&token=f89f56fe-0941-47d3-8f3a-feac75844bd8'
+                                }
                                 width='100%'
                                 height='auto'
                                 controls={true}
