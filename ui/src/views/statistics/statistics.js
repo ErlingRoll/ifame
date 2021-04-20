@@ -30,63 +30,79 @@ const Statistics = () => {
     );
 
     return (
-        <div className={'bg-gray-200 p-4'} style={{ minHeight: '100vh' }}>
-            <div className={'w-full mb-4'}>
-                <h3
-                    className={
-                        'text-2xl font-semibold text-gray-700 ml-1 mb-4'
-                    }>
-                    Oversikt
-                </h3>
-                <div className={'flex'}>
-                    <Card className={'flex flex-col items-center p-4 mr-4'}>
-                        <h3
+        <div className={'w-full flex justify-center'}>
+            <div
+                className={'w-full max-w-screen-xl p-8 xl:p-2'}
+                style={{ minHeight: '100vh' }}>
+                <div className={'w-full mb-4'}>
+                    <h3
+                        className={
+                            'text-2xl font-semibold text-gray-700 ml-1 mb-4'
+                        }>
+                        Oversikt
+                    </h3>
+                    <div
+                        className={'flex flex-col justify-between md:flex-row'}>
+                        <Card
                             className={
-                                'text-gray-600 text-lg mb-2 font-semibold'
+                                'flex flex-col items-center p-4 mb-4 md:mb-0 md:mr-4 flex-1'
                             }>
-                            Penger spart
-                        </h3>
-                        <strong className={'text-2xl'}>1780 NOK</strong>
+                            <h3
+                                className={
+                                    'text-gray-600 text-lg mb-2 font-semibold'
+                                }>
+                                Penger spart
+                            </h3>
+                            <strong className={'text-2xl'}>1780 NOK</strong>
+                        </Card>
+                        <Card
+                            className={
+                                'flex flex-col items-center p-4 mb-4 md:mb-0 md:mr-4 flex-1'
+                            }>
+                            <h3
+                                className={
+                                    'text-gray-600 text-lg mb-2 font-semibold'
+                                }>
+                                Totalt brukt
+                            </h3>
+                            <strong className={'text-2xl'}>5764 NOK</strong>
+                        </Card>
+                        <Card
+                            className={'flex flex-col items-center p-4 flex-1'}>
+                            <h3
+                                className={
+                                    'text-gray-600 text-lg mb-2 font-semibold'
+                                }>
+                                Andel varer kjøpt på tilbud
+                            </h3>
+                            <strong className={'text-2xl'}>47%</strong>
+                        </Card>
+                    </div>
+                </div>
+                <div
+                    className={'w-full flex flex-col items-center xl:flex-row'}>
+                    <Card
+                        className={
+                            'w-full xl:w-1/2 flex flex-col mb-4 xl:mb-0 xl:mr-4'
+                        }>
+                        <h6
+                            className={
+                                'text-lg font-semibold text-gray-800 mb-4 ml-2'
+                            }>
+                            Penger spart i løpet av det siste året
+                        </h6>
+                        <Timeline data={testData} />
                     </Card>
-                    <Card className={'flex flex-col items-center p-4 mr-4'}>
-                        <h3
+                    <Card className={'w-full xl:w-1/2 flex flex-col'}>
+                        <h6
                             className={
-                                'text-gray-600 text-lg mb-2 font-semibold'
+                                'text-lg font-semibold text-gray-800 mb-4 ml-2'
                             }>
-                            Totalt brukt
-                        </h3>
-                        <strong className={'text-2xl'}>5764 NOK</strong>
-                    </Card>
-                    <Card className={'flex flex-col items-center p-4'}>
-                        <h3
-                            className={
-                                'text-gray-600 text-lg mb-2 font-semibold'
-                            }>
-                            Andel varer kjøpt på tilbud
-                        </h3>
-                        <strong className={'text-2xl'}>47%</strong>
+                            Samlet penger spart på kategorier
+                        </h6>
+                        <Accumulated data={testData} />
                     </Card>
                 </div>
-            </div>
-            <div className={'w-full flex'}>
-                <Card className={'w-1/2 flex flex-col mr-4'}>
-                    <h6
-                        className={
-                            'text-lg font-semibold text-gray-800 mb-4 ml-2'
-                        }>
-                        Penger spart i løpet av det siste året
-                    </h6>
-                    <Timeline data={testData} />
-                </Card>
-                <Card className={'w-1/2 flex flex-col'}>
-                    <h6
-                        className={
-                            'text-lg font-semibold text-gray-800 mb-4 ml-2'
-                        }>
-                        Samlet penger spart på kategorier
-                    </h6>
-                    <Accumulated data={testData} />
-                </Card>
             </div>
         </div>
     );

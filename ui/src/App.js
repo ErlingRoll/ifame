@@ -16,6 +16,7 @@ import Cookbook from './views/cookbook/cookbook';
 import Recipes from './views/cookbook/views/recipes/recipes';
 import Statistics from './views/statistics/statistics';
 import Competition from './views/competition/competition';
+import Tutorial from './views/tutorial/tutorial';
 
 const history = createBrowserHistory();
 
@@ -23,7 +24,7 @@ function App() {
     let isLoggedIn = useSelector(selectors.user.isLoggedIn);
 
     return (
-        <div className={'h-full pt-16'}>
+        <div className={'h-full pt-16 bg-gray-100'}>
             <Navbar />
             <Router history={history}>
                 {isLoggedIn ? (
@@ -52,6 +53,11 @@ function App() {
                             exact
                             path={ROUTES.COMPETITION}
                             component={Competition}
+                        />
+                        <Route
+                            exact
+                            path={ROUTES.TUTORIAL}
+                            component={Tutorial}
                         />
                         <Route exact path={ROUTES.LOGIN}>
                             <Redirect to={ROUTES.DASHBOARD} />

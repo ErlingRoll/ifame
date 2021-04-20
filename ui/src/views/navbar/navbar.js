@@ -15,10 +15,13 @@ const Navbar = () => {
     const NavItem = ({ children }) => <div className={'ml-4'}>{children}</div>;
 
     return (
-        <div className={'absolute w-full top-0 left-0'}>
+        <div
+            className={
+                'absolute w-full top-0 left-0 flex justify-center bg-green-400'
+            }>
             <div
                 className={
-                    'w-full px-4 h-16 bg-green-400 flex justify-between items-center cursor-pointer'
+                    'w-full max-w-screen-xl px-4 h-16 flex justify-between items-center cursor-pointer'
                 }>
                 <div>
                     <a href={'/'}>
