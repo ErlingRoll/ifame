@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { FaChevronDown } from 'react-icons/fa';
+
 const scanImage = require('../../assets/images/scan_cropped.png');
+const savedGraphs = require('../../assets/images/graphs.png');
+const notSpoiled = require('../../assets/images/not_spoiled.jpg');
+const award = require('../../assets/images/award.png');
+const banankake = require('../../assets/images/banankake.png');
 const arrowLoop = require('../../assets/images/arrow_loop.png');
+const arrowSquiggle = require('../../assets/images/arrow_squiggle.png');
 
 const grillpolser_image = require('../../assets/images/grillpolser.png');
 const lordagspizza_image = require('../../assets/images/lordagspizza.png');
@@ -152,11 +158,8 @@ const Tutorial = () => {
                     <div className={'flex items-center'} style={{ height: '80%' }}>
                         <div className={'w-2/3 flex items-center'}>
                             <ReactPlayer
-                                url={
-                                    'https://firebasestorage.googleapis.com/v0/b/ifame-2f5e8.appspot.com/o/tutorial.mp4?alt=media&token=f89f56fe-0941-47d3-8f3a-feac75844bd8'
-                                }
+                                url={'https://vimeo.com/539562565'}
                                 width='100%'
-                                height='auto'
                                 controls={true}
                                 loop={true}
                                 muted={true}
@@ -173,24 +176,47 @@ const Tutorial = () => {
                     </div>
                 </div>
                 <Step>
-                    <h2 className={'font-semibold text-2xl text-primary'}>Steg 1</h2>
+                    <h2 className={'font-semibold text-4xl text-primary'}>Steg 1</h2>
                     <div className={'flex'}>
                         <div className={'w-2/3 flex justify-center items-center'}>
                             <p className={'font-semibold text-3xl mr-8 font-mono'}>Scan tilbudsvarer</p>
                             <img src={scanImage} alt={'scan product'} className={'w-1/2 rounded'} />
                         </div>
                         <div className={'relative w-1/3'}>
-                            <img src={arrowLoop} alt={'arrow'} className={'absolute w-1/5 ml-12'} style={{ bottom: '-50%' }} />
+                            <img src={arrowLoop} alt={'arrow'} className={'absolute w-1/5 ml-24'} style={{ bottom: '-50%' }} />
                         </div>
                     </div>
                 </Step>
                 <Step>
-                    <div className={'flex justify-end'}>
-                        <h2 className={'font-semibold text-2xl text-primary'}>Steg 2</h2>
+                    <div className={'h-full flex flex-col items-end'}>
+                        <h2 className={'font-semibold text-4xl text-primary'}>Steg 2</h2>
+                        <div className={'h-full flex w-full'}>
+                            <div className={'h-full flex w-1/3 justify-center items-end pl-24'}>
+                                <img src={arrowSquiggle} alt={'arrow'} className={'w-48 ml-12'} />
+                            </div>
+                            <div className={'flex justify-center items-center'}>
+                                <img src={savedGraphs} alt={'scan product'} className={'w-1/2 rounded'} />
+                                <p className={'font-semibold text-3xl ml-8 font-mono'}>Se sparing</p>
+                            </div>
+                        </div>
                     </div>
                 </Step>
                 <Step>
-                    <h2 className={'font-semibold text-2xl text-primary'}>Steg 3</h2>
+                    <h2 className={'font-semibold text-4xl text-primary'}>Steg 3</h2>
+                    <div className={'w-full flex justify-around'}>
+                        <div className={'w-1/3 flex flex-col justify-center items-center p-4'}>
+                            <p className={'font-semibold text-3xl font-mono'}>Få bevissthet</p>
+                            <img src={notSpoiled} alt={'scan product'} className={'w-1/2 h-32 object-scale-down rounded'} />
+                        </div>
+                        <div className={'w-1/3 flex flex-col justify-center items-center p-4'}>
+                            <p className={'font-semibold text-3xl font-mono'}>Lag mat</p>
+                            <img src={banankake} alt={'scan product'} className={'w-1/2 h-32 object-scale-down rounded'} />
+                        </div>
+                        <div className={'w-1/3 flex flex-col justify-center items-center p-4'}>
+                            <p className={'font-semibold text-3xl font-mono'}>Vinn premier</p>
+                            <img src={award} alt={'scan product'} className={'w-1/2 h-32 object-scale-down rounded'} />
+                        </div>
+                    </div>
                 </Step>
             </div>
         </div>
