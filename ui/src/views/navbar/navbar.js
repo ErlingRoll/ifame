@@ -15,17 +15,11 @@ const Navbar = () => {
     const NavItem = ({ children }) => <div className={'ml-4'}>{children}</div>;
 
     return (
-        <div
-            className={
-                'absolute w-full top-0 left-0 flex justify-center bg-green-400'
-            }>
-            <div
-                className={
-                    'w-full max-w-screen-xl px-4 h-16 flex justify-between items-center cursor-pointer'
-                }>
+        <div className={'absolute w-full top-0 left-0 flex justify-center bg-green-400'}>
+            <div className={'w-full max-w-screen-xl px-4 h-16 flex justify-between items-center cursor-pointer'}>
                 <div>
                     <a href={'/'}>
-                        <h3 className={'text-2xl'}>Matprat</h3>
+                        <h3 className={'text-2xl'}>ØKOsparing</h3>
                     </a>
                 </div>
                 <div className={'h-full flex items-center'}>
@@ -33,11 +27,7 @@ const Navbar = () => {
                         <React.Fragment>
                             <NavItem>{user.data.displayName}</NavItem>
                             <NavItem>
-                                <Button
-                                    type={'danger'}
-                                    onClick={() =>
-                                        dispatch(actions.user.signOut())
-                                    }>
+                                <Button type={'danger'} onClick={() => dispatch(actions.user.signOut())}>
                                     Logout
                                 </Button>
                             </NavItem>

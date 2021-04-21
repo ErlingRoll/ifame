@@ -14,7 +14,7 @@ const Dashboard = ({ ...props }) => {
 
     const Title = () => (
         <div className={'w-4/5 lg:w-2/3 lg:px-24 flex flex-col items-center mt-12'}>
-            <h1 className={'mb-4 text-3xl font-semibold'}>Matprat</h1>
+            <h1 className={'mb-4 text-3xl font-semibold'}>ØKOsparing</h1>
             <p className={'text-center'}>
                 Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est
                 audiam animal molestiae te.

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { FaChevronDown } from 'react-icons/fa';
+import { useHistory } from 'react-router';
+import ROUTES from '../../routes';
 
-const scanImage = require('../../assets/images/scan_cropped.png');
+const barcode = require('../../assets/images/barcode.png');
 const savedGraphs = require('../../assets/images/graphs.png');
-const notSpoiled = require('../../assets/images/not_spoiled.jpg');
+const earth = require('../../assets/images/earth.png');
 const award = require('../../assets/images/award.png');
-const banankake = require('../../assets/images/banankake.png');
-const arrowLoop = require('../../assets/images/arrow_loop.png');
-const arrowSquiggle = require('../../assets/images/arrow_squiggle.png');
+const recipe = require('../../assets/images/recipe.png');
+const arrowLoop = require('../../assets/images/arrow_1.png');
+const arrowSquiggle = require('../../assets/images/arrow_2.png');
 
 const grillpolser_image = require('../../assets/images/grillpolser.png');
 const lordagspizza_image = require('../../assets/images/lordagspizza.png');
@@ -35,6 +37,8 @@ const sursild = { name: 'Sursild', cost: 59, sale: 27, image: sursild_image };
 const initialProducts = [grillpolser, lordagspizza, salathode];
 
 const Tutorial = () => {
+    const history = useHistory();
+
     const [products, setProducts] = useState(initialProducts);
     const [newProduct, setNewProduct] = useState(null);
     const Step = ({ children }) => (
@@ -156,7 +160,7 @@ const Tutorial = () => {
             <div className={'max-w-screen-xl'}>
                 <div className={'h-screen flex flex-col justify-between py-12'}>
                     <div className={'flex items-center'} style={{ height: '80%' }}>
-                        <div className={'w-2/3 flex items-center'}>
+                        <div className={'w-2/3 flex flex-col items-center'}>
                             <ReactPlayer
                                 url={'https://vimeo.com/539562565'}
                                 width='100%'
@@ -166,6 +170,7 @@ const Tutorial = () => {
                                 playing={true}
                                 onProgress={updatePhone}
                             />
+                            <p className={'mt-12 text-2xl'}>Last ned appen i dag og bli med i kampen mot matsvinn!</p>
                         </div>
                         <div className={'h-full w-1/3 flex justify-center items-center px-12'}>
                             <Phone />
@@ -175,45 +180,61 @@ const Tutorial = () => {
                         <FaChevronDown size={42} />
                     </div>
                 </div>
+                <div className={'flex justify-center text-2xl'}>
+                    Hei og velkommen! Du er snart klar til å bidra til mindre matsvinn i butikkene.
+                </div>
                 <Step>
                     <h2 className={'font-semibold text-4xl text-primary'}>Steg 1</h2>
                     <div className={'flex'}>
-                        <div className={'w-2/3 flex justify-center items-center'}>
-                            <p className={'font-semibold text-3xl mr-8 font-mono'}>Scan tilbudsvarer</p>
-                            <img src={scanImage} alt={'scan product'} className={'w-1/2 rounded'} />
+                        <div className={'w-2/3 flex justify-start items-center'}>
+                            <p className={'font-semibold text-3xl font-mono mr-8'} style={{ width: '60%' }}>
+                                Skan tilbudsvare med utvidet tilbudsstrekkode
+                            </p>
+                            <img src={barcode} alt={'scan product'} className={'w-1/2 rounded'} />
                         </div>
                         <div className={'relative w-1/3'}>
-                            <img src={arrowLoop} alt={'arrow'} className={'absolute w-1/5 ml-24'} style={{ bottom: '-50%' }} />
+                            <img src={arrowLoop} alt={'arrow'} className={'absolute w-1/2 ml-32'} style={{ bottom: '-20%' }} />
                         </div>
                     </div>
                 </Step>
                 <Step>
                     <div className={'h-full flex flex-col items-end'}>
                         <h2 className={'font-semibold text-4xl text-primary'}>Steg 2</h2>
-                        <div className={'h-full flex w-full'}>
-                            <div className={'h-full flex w-1/3 justify-center items-end pl-24'}>
-                                <img src={arrowSquiggle} alt={'arrow'} className={'w-48 ml-12'} />
+                        <div className={'h-full flex w-full items-center'}>
+                            <div className={'h-full flex w-1/5 justify-start items-end'}>
+                                <img
+                                    src={arrowSquiggle}
+                                    alt={'arrow'}
+                                    className={'w-32'}
+                                    style={{ transform: 'rotate(25deg)', marginBottom: '-10%' }}
+                                />
                             </div>
-                            <div className={'flex justify-center items-center'}>
-                                <img src={savedGraphs} alt={'scan product'} className={'w-1/2 rounded'} />
-                                <p className={'font-semibold text-3xl ml-8 font-mono'}>Se sparing</p>
+                            <div className={'flex justify-end items-center'}>
+                                <img src={savedGraphs} alt={'scan product'} className={'w-full rounded'} />
+                                <p className={'w-64 font-semibold text-3xl ml-8 font-mono text-right'}>Se personlig sparing</p>
                             </div>
                         </div>
                     </div>
                 </Step>
                 <Step>
-                    <h2 className={'font-semibold text-4xl text-primary'}>Steg 3</h2>
-                    <div className={'w-full flex justify-around'}>
-                        <div className={'w-1/3 flex flex-col justify-center items-center p-4'}>
-                            <p className={'font-semibold text-3xl font-mono'}>Få bevissthet</p>
-                            <img src={notSpoiled} alt={'scan product'} className={'w-1/2 h-32 object-scale-down rounded'} />
+                    <h2 className={'font-semibold text-4xl text-primary mb-12 mt-8'}>Steg 3</h2>
+                    <div className={'w-full flex justify-around mb-24'}>
+                        <div
+                            className={'w-1/3 flex flex-col justify-center items-center p-4 cursor-pointer'}
+                            onClick={() => history.push(ROUTES.STATISTICS)}>
+                            <p className={'font-semibold text-3xl font-mono mb-4'}>Få bevissthet</p>
+                            <img src={earth} alt={'scan product'} className={'w-1/2 h-32 object-scale-down rounded'} />
                         </div>
-                        <div className={'w-1/3 flex flex-col justify-center items-center p-4'}>
-                            <p className={'font-semibold text-3xl font-mono'}>Lag mat</p>
-                            <img src={banankake} alt={'scan product'} className={'w-1/2 h-32 object-scale-down rounded'} />
+                        <div
+                            className={'w-1/3 flex flex-col justify-center items-center p-4 cursor-pointer'}
+                            onClick={() => history.push(ROUTES.COOKBOOK)}>
+                            <p className={'font-semibold text-3xl font-mono mb-4'}>Lag mat</p>
+                            <img src={recipe} alt={'scan product'} className={'w-1/2 h-32 object-scale-down rounded'} />
                         </div>
-                        <div className={'w-1/3 flex flex-col justify-center items-center p-4'}>
-                            <p className={'font-semibold text-3xl font-mono'}>Vinn premier</p>
+                        <div
+                            className={'w-1/3 flex flex-col justify-center items-center p-4 cursor-pointer'}
+                            onClick={() => history.push(ROUTES.COMPETITION)}>
+                            <p className={'font-semibold text-3xl font-mono mb-4'}>Vinn premier</p>
                             <img src={award} alt={'scan product'} className={'w-1/2 h-32 object-scale-down rounded'} />
                         </div>
                     </div>
