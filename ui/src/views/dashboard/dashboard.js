@@ -15,9 +15,8 @@ const Dashboard = ({ ...props }) => {
     const Title = () => (
         <div className={'w-4/5 lg:w-2/3 lg:px-24 flex flex-col items-center mt-12'}>
             <h1 className={'mb-4 text-3xl font-semibold'}>ØKOsparing</h1>
-            <p className={'text-center'}>
-                Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est
-                audiam animal molestiae te.
+            <p className={'text-center text-gray-700 text-lg px-12'}>
+                ØKOsystem gir dataene dine verdi. Utvidet strekkode tillater bedre innsikt, bedre sparing og bedre miljø.
             </p>
             <button className={'border-2 border-primary rounded p-2 mt-8 bg-green-100'} onClick={() => history.push(ROUTES.TUTORIAL)}>
                 Hvordan fungerer det?
@@ -49,17 +48,13 @@ const Dashboard = ({ ...props }) => {
         <div className={'w-full flex flex-col items-center z-10'}>
             <h2 className={'mt-4 text-3xl font-semibold'}>Aktiviteter</h2>
             <div className={'w-full flex flex-col lg:flex-row items-center justify-between mb-8'}>
-                <Acitivty
-                    name={'Statistikk'}
-                    description={'Se hvor mye du har spart ... type matvarer etter kategori ...'}
-                    route={ROUTES.STATISTICS}
-                />
+                <Acitivty name={'Statistikk'} description={'Få oversikt og bevisstgjør deg om ditt forbruk'} route={ROUTES.STATISTICS} />
                 <Acitivty
                     name={'Kokebok'}
                     description={'Oppskrifter og inspirasjon til hvordan bruke rester i kjøleskapet'}
                     route={ROUTES.COOKBOOK}
                 />
-                <Acitivty name={'Konkurranse'} description={'Sånn kan du bruke maten du har kjøpt...'} route={ROUTES.COMPETITION} />
+                <Acitivty name={'Konkurranse'} description={'Spar miljøet! Vinn premier! Win-Win!'} route={ROUTES.COMPETITION} />
             </div>
         </div>
     );
