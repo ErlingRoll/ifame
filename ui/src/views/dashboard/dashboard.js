@@ -16,7 +16,7 @@ const Dashboard = ({ ...props }) => {
         <div className={'w-4/5 lg:w-2/3 lg:px-24 flex flex-col items-center mt-12'}>
             <h1 className={'mb-4 text-3xl font-semibold'}>ØKOsparing</h1>
             <p className={'text-center text-gray-700 text-lg px-12'}>
-                ØKOsystem gir dataene dine verdi. Utvidet strekkode tillater bedre innsikt, bedre sparing og bedre miljø.
+                ØKOsystem gir dataen din verdi. Informasjon om dine kjøpsvaner tillater bedre innsikt, bedre sparing og bedre miljø.
             </p>
             <button className={'border-2 border-primary rounded p-2 mt-8 bg-green-100'} onClick={() => history.push(ROUTES.TUTORIAL)}>
                 Hvordan fungerer det?
@@ -54,7 +54,7 @@ const Dashboard = ({ ...props }) => {
                     description={'Oppskrifter og inspirasjon til hvordan bruke rester i kjøleskapet'}
                     route={ROUTES.COOKBOOK}
                 />
-                <Acitivty name={'Konkurranse'} description={'Spar miljøet! Vinn premier! Win-Win!'} route={ROUTES.COMPETITION} />
+                <Acitivty name={'Konkurranse'} description={'Spar miljøet! Vinn premier!'} route={ROUTES.COMPETITION} />
             </div>
         </div>
     );
